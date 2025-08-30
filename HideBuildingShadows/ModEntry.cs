@@ -15,9 +15,9 @@ namespace HideBuildingShadows
 {
 	public class Config
 	{
-		public bool HideGreenhouseShadow { get; set; } = false;
 		public bool GreenhouseSoftShadow { get; set; } = false;
-		public bool HideAllOtherShadows { get; set; } = false;
+		public bool HideGreenhouseShadow { get; set; } = true;
+		public bool HideAllOtherShadows { get; set; } = true;
 		public bool HideBarnShadow { get; set; } = false;
 		public bool HideCoopShadow { get; set; } = false;
 		public bool HideShedShadow { get; set; } = false;
@@ -199,8 +199,8 @@ namespace HideBuildingShadows
 			List<string> menu = ModEntry.Config.GetType().GetProperties().Select((PropertyInfo p) => p.Name).ToList();
 			
 			// Add labels between options manually
-			menu.Insert(4, "SpecificBuildingsOptions");
-			menu.Insert(3, "OtherBuildingsOptions");
+			menu.Insert(3, "SpecificBuildingsOptions");
+			menu.Insert(2, "OtherBuildingsOptions");
 			menu.Insert(0, "GreenhouseOptions");
 			
 			foreach (string entry in menu)
